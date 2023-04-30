@@ -5,7 +5,7 @@ USER root
 COPY files/sources.list /etc/apt/sources.list
 
 RUN apt-get update &&\
-	apt-get install -y --no-install-recommends python3-dev imagemagick ffmpeg sox git curl rsync repo python3-pip && apt-get clean
+	apt-get install -y --no-install-recommends python3-dev imagemagick ffmpeg sox git curl rsync repo python3-pip libfmt-dev && apt-get clean
 
 ARG KAS_VERSION=2.6.2
 RUN pip3 install kas==${KAS_VERSION}
